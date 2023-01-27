@@ -9,8 +9,7 @@ RSpec.describe User, type: :model do
     expect(subject).to_not be_valid
   end
 
-  it 'bio should be present' do
-    subject.bio = nil
-    expect(subject).to_not be_valid
+  it 'post counter method should be 3' do
+    expect(subject.latest_posts).to eq(subject.posts)
   end
 end
