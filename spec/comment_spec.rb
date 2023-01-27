@@ -15,4 +15,9 @@ RSpec.describe Comment, type: :model do
     subject.author_id = nil
     expect(subject).to_not be_valid
   end
+
+  it 'comments counter should increase in 1' do
+    update_comment = subject.update_comments_counter
+    expect(update_comment.comments_counter).to eql 1
+  end
 end

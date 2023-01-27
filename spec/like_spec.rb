@@ -15,4 +15,9 @@ RSpec.describe Like, type: :model do
     subject.author_id = nil
     expect(subject).to_not be_valid
   end
+
+  it 'likes counter should increase in 1' do
+    update_like = subject.update_likes_counter
+    expect(update_like.likes_counter).to eql 1
+  end
 end
