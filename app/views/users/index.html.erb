@@ -1,15 +1,17 @@
 <h1>Here is a list of posts for a given Users</h1>
-<section>
+<h2> List of name's</h2>
+<section class='section-main'>
   <% @users.each do |user| %>
     <%= link_to user_path(user) do%>
-        <div>
-          <h2> <%= user.name %></h2>
-          <h2> <%= user.id %></h2>
-          <span>Number of posts: <%=user.posts.count%></span>
-        </div>
-        <div>
+    <div class='general-container'>
+        <div class='container-users-photo'>
           <img src="<%= user.photo%>"/>
         </div>
+        <div class='container-users'>
+          <h2 class='user-name'> <%= user.name %></h2>
+          <span class='number-post'>Number of posts: <%=user.posts.count%></span>
+        </div>
+    </div>
     <%end%>
   <% end %>
 </section>
