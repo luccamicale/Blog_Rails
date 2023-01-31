@@ -1,1 +1,25 @@
-<h1>Here is a list of posts for a given user</h1>
+<h1>Here is a list of posts for a given show user</h1>
+<section>
+  <div>
+    <h2> <%= @user.name %></h2>
+    <span>Number of posts: <%=@user.posts.count%></span>
+  </div>
+  <div>
+    <img src="<%= @user.photo%>"/>
+  </div>
+  <div>
+    <h3> <%= @user.bio %></h3>
+  </div>
+  <div>
+    <%@user.latest_posts.each do |post|%>
+      <h4> Post # <%= post.id %> </h4>
+      <h4> Text: <%= post.text %> </h4>
+      <div>
+        <p> 
+          Comments Counter :<%=post.comments_counter %>
+          Likes Counter :<%=post.likes_counter %>
+        </p>
+      </div>
+    <%end%>
+  </div>
+</section>
