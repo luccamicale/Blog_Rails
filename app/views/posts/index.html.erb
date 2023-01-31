@@ -9,4 +9,22 @@
         <img src="<%= @user.photo%>"/>
     </div>
   </div>
+  <div>
+    <%@user.posts.each do |post|%>
+    <%= link_to user_post_path(@user, post) do%>
+      <div>
+        <h3>Post #<%=post.id%></h3>
+        <div>
+          <p><%=post.text%></p>
+          <span>Comments: <%=post.comments_counter%> Likes: <%=post.likes_counter%></span>
+        </div>
+      </div>
+  </div>
+  <div>
+    <%post.recent_comments.each do |comment|%>
+        <p><%=comment.author.name%>: <%=comment.text%></p>
+    <%end%>
+    </div>
+  <%end%>
+<%end%>
 </section>
