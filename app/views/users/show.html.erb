@@ -1,1 +1,34 @@
-<h1>Here is a list of posts for a given user</h1>
+<h1>Here is a list of posts for a given show user</h1>
+<section>
+  <div class='container-show-users'>
+    <div class='cont-photo-show-users'>
+      <img src="<%= @user.photo%>"/>
+    </div>
+    <div class='cont-name-numbers-post-show-users'>
+      <h2 class='user-name-posts-show'> <%= @user.name %></h2>
+      <span class='number-post-posts-show'>Number of posts: <%=@user.posts.count%></span>
+    </div>
+  </div>
+  <div>
+    <div class='cont-bio-show-users'>
+      <h3> Biography :<%= @user.bio %></h3>
+    </div>
+  </div>
+  <div class='cont-id-text-counter-shows-users'>
+    <%@user.latest_posts.each do |post|%>
+      <div class='container-id-text-counter'>
+        <h4> Post # <%= post.id %> </h4>
+        <h4> Text: <%= post.text %> </h4>
+        <p> 
+          Comments Counter :<%=post.comments_counter %>
+          Likes Counter :<%=post.likes_counter %>
+        </p>
+      </div>
+    <%end%>
+  </div>
+  <div class='button-see-all-posts'>
+    <%=link_to user_posts_path(@user) do%>
+    <button>See all posts</button>
+  <%end%>
+  </div>
+</section>
