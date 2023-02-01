@@ -14,4 +14,9 @@
       <p><%=comment.author.name%>: <%=comment.text%></p>
     <%end%>
   </div>
+  <div class='button-see-all-posts'>
+    <%=link_to new_comment_path do%>
+    <button>Create New Comment</button>
+  <%end%>
+  </div>
 </section>
