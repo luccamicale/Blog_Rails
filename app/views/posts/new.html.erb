@@ -1,6 +1,7 @@
 <h1>New Post</h1>
 
-<%= form_with model: @new_user_post do |form| %>
+
+<%= form_with url:posts_path(@post), model: @post do |form| %>
     <div>
   <%= form.label :title %>
   <%= form.text_field :title %>
