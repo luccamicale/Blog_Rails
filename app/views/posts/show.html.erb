@@ -19,9 +19,7 @@
     <button>Create New Comment</button>
   <%end%>
   </div>
-  <div class='button-see-all-posts'>
-    <%=link_to @like do%>
-    <button>Create New Like </button>
-  <%end%>
-  </div>
+  <%= form_with url: user_post_likes_path(@post,@user), model: @like , method: :post ,scope: :like do |f| %>
+        <%= f.submit "Create Like" %>
+  <% end %>
 </section>

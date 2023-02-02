@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
   end
 
@@ -16,6 +17,8 @@ class PostsController < ApplicationController
 
     if @post.save
       redirect_to user_path(current_user.id)
+    elsif @like.save
+      redirect_to user_path(current_user), notice: 'like was successfully created.'
     else
       render :new
     end
