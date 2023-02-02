@@ -7,4 +7,5 @@ Rails.application.routes.draw do
 
   resources :posts, only: %i[new create]
   resources :comments, only: %i[new create]
+  resources :likes, only: %i[create show]
 end
