@@ -20,8 +20,8 @@
         <h4> Post # <%= post.id %> </h4>
         <h4> Text: <%= post.text %> </h4>
         <p> 
-          Comments Counter :<%=@user.comments.count %>
-          Likes Counter :<%=@user.likes.count %>
+          Comments Counter :<%=post.comments_counter %>
+          Likes Counter :<%=post.likes_counter %>
         </p>
       </div>
     <%end%>
