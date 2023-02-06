@@ -16,7 +16,7 @@ RSpec.describe User, type: :system do
       expect(page).to have_content('Number of posts: 1')
     end
 
-    it 'When I click on a user, I am redirected to that users show page.' do
+    it 'When I click on a user Tom, I am redirected to that user show.' do
       visit users_path
       click_link 'Tom'
       expect(page).to have_current_path(user_path(2))
