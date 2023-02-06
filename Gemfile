@@ -6,6 +6,8 @@ gem 'rspec-rails', '~> 6.0', '>= 6.0.1'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.4', '>= 7.0.4.2'
 
+gem 'bullet', group: 'development'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
