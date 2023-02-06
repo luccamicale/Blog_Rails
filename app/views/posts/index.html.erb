@@ -20,7 +20,7 @@
         </div>
         <div>
           <h3>List of Comments</h3>
-          <%post.recent_comments.each do |comment|%>
+          <%post.comments.each do |comment|%>
           <p><%=comment.author.name%>: <%=comment.text%></p>
           <%end%>
        </div>
