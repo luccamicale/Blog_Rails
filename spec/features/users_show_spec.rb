@@ -35,10 +35,10 @@ RSpec.describe User, type: :system do
     end
 
     it 'When I click a users post, it redirects me to that posts show page.' do
-      visit user_path(23)
+      visit user_path(35)
       post_id = Post.last.id
       post_author = Post.last.author_id
-      click_link 'Post #34'
+      click_link 'Post #52'
       expect(page).to have_current_path(user_post_path(post_author, post_id))
     end
 
