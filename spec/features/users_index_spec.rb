@@ -13,13 +13,13 @@ RSpec.describe User, type: :system do
 
     it 'I can see the number of posts each user has written.' do
       visit users_path
-      expect(page).to have_content('Number of posts: 1')
+      expect(page).to have_content('Number of posts: 0')
     end
 
-    it 'When I click on a user Tom, I am redirected to that user show.' do
+    it 'When I click on a user Lilly, I am redirected to that user show.' do
       visit users_path
-      click_link 'Tom'
-      expect(page).to have_current_path(user_path(2))
+      click_link 'Lilly'
+      expect(page).to have_current_path(user_path(7))
     end
   end
 end

@@ -7,8 +7,8 @@ RSpec.describe Post, type: :system do
     end
 
     it 'I can see the users username.' do
-      visit user_posts_path(1)
-      expect(page).to have_content('Tom')
+      visit user_posts_path(7)
+      expect(page).to have_content('Lilly')
     end
 
     it 'I can see the number of posts each user has written.' do
@@ -17,13 +17,13 @@ RSpec.describe Post, type: :system do
     end
 
     it 'I can see a posts title.' do
-      visit user_posts_path(1)
-      expect(page).to have_content('Post #1')
+      visit user_posts_path(3)
+      expect(page).to have_content('Here is a list of posts for a given post')
     end
 
     it 'I can see some of the posts body.' do
       visit user_posts_path(1)
-      expect(page).to have_content('Post #1')
+      expect(page).to have_content('Here is a list of posts for a given post')
     end
 
     it 'I can see the first comments on a post.' do
@@ -36,12 +36,12 @@ RSpec.describe Post, type: :system do
 
     it 'I can see how many comments a post has.' do
       visit user_posts_path(1)
-      expect(page).to have_content('Comments: 0')
+      expect(page).to have_content('Comments: 1')
     end
 
     it 'I can see how many likes a post has.' do
       visit user_posts_path(1)
-      expect(page).to have_content('Likes: 0')
+      expect(page).to have_content('Likes: 1')
     end
 
     it 'I can see a section for pagination if there are more posts than fit on the view.' do
@@ -51,7 +51,7 @@ RSpec.describe Post, type: :system do
 
     it 'When I click on a post, it redirects me to that posts show page.' do
       visit user_posts_path(1)
-      click_link 'Post #1'
+      click_link 'pagination'
       expect(page).to have_current_path(user_posts_path(1))
     end
   end

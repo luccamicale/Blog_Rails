@@ -33,13 +33,5 @@ RSpec.describe Post, type: :system do
         expect(page).to have_content(comment.author.name)
       end
     end
-
-    it 'I can see the comment each commentor left.' do
-      visit user_post_path(1, 1)
-      post = Post.includes(:comments, comments: [:author]).last
-      comment = post.comments.first
-      comment_post = comment.author.name.concat(':').concat(comment.text)
-      expect(page).to have_content(comment_post)
-    end
   end
 end

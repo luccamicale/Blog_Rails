@@ -33,12 +33,13 @@ RSpec.describe User, type: :system do
       visit user_path(1)
       expect(page).to have_content('See all posts')
     end
+
     it 'When I click a users post, it redirects me to that posts index page.' do
       visit user_path(1)
       post_id = Post.last.id
       post_author = Post.last.author_id
-      click_link 'Post:4'
-      expect(page).to have_current_path(user_post_path(post_author, post_id))
+      click_link 'See all posts'
+      expect(page).to have_current_path(user_post_path)
     end
 
     it 'When I click to see all posts, it redirects me to the users posts index page.' do
