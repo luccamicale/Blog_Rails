@@ -30,7 +30,7 @@ RSpec.describe Post, type: :system do
       visit user_posts_path(1)
       post_id_first = Post.first.id
       author_id_post = Post.first.author_id
-      comment = Comment.where(author_id: author_id_post, post_id: post_id_first).first
+      @comment = Comment.where(author_id: author_id_post, post_id: post_id_first).first
       expect(page).to have_content('This is my first post')
     end
 
