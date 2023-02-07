@@ -142,15 +142,32 @@ You can deploy this project using:
 - LinkedIn: [luccamicale](https://www.linkedin.com/in/luccamicale/)
 - Twitter: [@luccamicale_](https://twitter.com/LuccaMicale_)
 
+## 👥 Authors <a name="authors"></a>
+
+👤 **Odette Gleen**
+
+- GitHub: [@Gleennkar](https://github.com/Gleennkar)
+- Twitter: [@gleeny24](https://twitter.com/twitterhandle)
+- LinkedIn: [@gleeny](https://www.linkedin.com/in/gleeny-nkar-aa3917182)
+
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Create Posts]**
-- [ ] **[Comment Posts]**
-- [ ] **[Like Posts]**
+-  Validations and Model specs.
+-  Processing data in models.
+-  Setup and controllers.
+-  Controllers specs.
+-  Views.
+-  Integration specs for Views and fixing n+1 problems.
+-  Add Devise.
+-  Add authorization rules.
+-  Add API endpoints.
+-  API documentation.
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
