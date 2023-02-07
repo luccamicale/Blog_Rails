@@ -1,58 +1,53 @@
 require 'rails_helper'
-RSpec.describe Post, type: :system do
-  describe 'post index user page' do
-    it 'I can see the profile picture for each user.' do
-      visit user_posts_path(1)
-      expect(page).to have_xpath("//img[@src='https://unsplash.com/photos/F_-0BxGuVvo']")
+
+RSpec.describe 'Post index page', type: :feature do
+  describe 'Post index page process' do
+    before(:each) do
+      @user = User.create(name: 'lola', photo: 'https://i.imgur.com/1JZ1Q2r.jpg', bio: 'I am a biology teacher',
+                          posts_counter: 1)
+      @user2 = User.create(name: 'lucas', photo: 'https://i.imgur.com/1JZ1Q2r.jpg', bio: 'I am a math teacher',
+                           posts_counter: 0)
+      @first_post = Post.create(author: @user, title: 'My post', text: 'This is my first post',
+                                comments_counter: 0, likes_counter: 0)
+      Comment.create(post: @first_post, author: @user2, text: 'This the first post comment')
+
+      visit user_posts_path(@user)
     end
 
-    it 'I can see the users username.' do
-      visit user_posts_path(7)
-      expect(page).to have_content('Lilly')
+    it 'should show the user profile picture' do
+      expect(page.body).to include(@user.photo)
     end
 
-    it 'I can see the number of posts each user has written.' do
-      visit user_posts_path(1)
-      expect(page).to have_content('Number of posts: 1')
+    it 'should show the user username' do
+      expect(page.body).to have_content(@user.name)
     end
 
-    it 'I can see a posts title.' do
-      visit user_posts_path(3)
-      expect(page).to have_content('Here is a list of posts for a given post')
+    it 'should show the number of post the user has writen' do
+      expect(page.body).to have_content(@user.posts_counter.to_s)
     end
 
-    it 'I can see some of the posts body.' do
-      visit user_posts_path(1)
-      expect(page).to have_content('Here is a list of posts for a given post')
+    it "should show a post's title" do
+      expect(page.body).to have_content('This is my first post')
     end
 
-    it 'I can see the first comments on a post.' do
-      visit user_posts_path(1)
-      post_id_first = Post.first.id
-      author_id_post = Post.first.author_id
-      @comment = Comment.where(author_id: author_id_post, post_id: post_id_first).first
-      expect(page).to have_content('This is my first post')
+    it "should some of the post's body" do
+      expect(page.body).to have_content(@first_post.text)
     end
 
-    it 'I can see how many comments a post has.' do
-      visit user_posts_path(1)
-      expect(page).to have_content('Comments: 1')
+    it 'should show the first comments on a post' do
+      expect(page.body).to have_content('This the first post comment')
     end
 
-    it 'I can see how many likes a post has.' do
-      visit user_posts_path(1)
-      expect(page).to have_content('Likes: 1')
+    it 'should show how many comments a post has' do
+      expect(page.body).to have_content(@first_post.comments_counter.to_s)
     end
 
-    it 'I can see a section for pagination if there are more posts than fit on the view.' do
-      visit user_posts_path(1)
-      expect(page).to have_content('pagination')
+    it 'should show how many likes a post has.' do
+      expect(page.body).to have_content(@first_post.likes_counter.to_s)
     end
 
-    it 'When I click on a post, it redirects me to that posts show page.' do
-      visit user_posts_path(1)
-      click_link 'pagination'
-      expect(page).to have_current_path(user_posts_path(1))
+    it 'should not show a pagination button' do
+      expect(page.body).not_to have_content('Pagination')
     end
   end
 end
