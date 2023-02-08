@@ -144,14 +144,6 @@ You can deploy this project using:
 - LinkedIn: [luccamicale](https://www.linkedin.com/in/luccamicale/)
 - Twitter: [@luccamicale_](https://twitter.com/LuccaMicale_)
 
-## 👥 Authors <a name="authors"></a>
-
-👤 **Lucas Bermudez**
-
-- GitHub: [@Oklukeok](https://github.com/Oklukeok)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/lucas-bermudez)
-
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
