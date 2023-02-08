@@ -101,6 +101,7 @@ In order to run this project you need:
 - Install PostgreSQL
 - Instal Rails gem
 
+
 ### Setup
 
 Clone this repository to your desired folder:
@@ -149,6 +150,11 @@ You can deploy this project using:
 - GitHub: [@Gleennkar](https://github.com/Gleennkar)
 - Twitter: [@gleeny24](https://twitter.com/twitterhandle)
 - LinkedIn: [@gleeny](https://www.linkedin.com/in/gleeny-nkar-aa3917182)
+
+👤 **Lucas Bermudez**
+
+- GitHub: [@Oklukeok](https://github.com/Oklukeok)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/lucas-bermudez)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
