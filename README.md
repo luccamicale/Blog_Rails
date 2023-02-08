@@ -144,6 +144,10 @@ You can deploy this project using:
 
 ## 👥 Authors <a name="authors"></a>
 
+👤 **Lucas Bermudez**
+
+- GitHub: [@Oklukeok](https://github.com/Oklukeok)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/lucas-bermudez)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
