@@ -6,10 +6,16 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
-      redirect_to user_posts_path(current_user)
+      redirect_to user_posts_path(current_user.id)
     else
       render :new
     end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_to post_show_path(current_user.id)
   end
 
   private

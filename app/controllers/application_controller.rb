@@ -3,10 +3,6 @@ class ApplicationController < ActionController::Base
 
   before_action :update_allowed_parameters, if: :devise_controller?
 
-  def current_user
-    User.first.id
-  end
-
   protected
 
   def update_allowed_parameters
