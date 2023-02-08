@@ -107,23 +107,25 @@ Clone this repository to your desired folder:
 
 https://github.com/luccamicale/Blog-App-Rails.git
 
-### Install
-
+### Installation
 Install this project with:
-
-- No Install needed
+```
+- bundle install
+- rails server
+- http://127.0.0.1:3000/
+```
 
 ### Usage
-
-- To run the project, use your text editor
-
+To run the project, execute the following command:
+```
+- railser server -p 4001
+```
 
 ### Run tests
-
 To run tests, run the following command:
-
-- No tests yet
-
+```
+- rspec
+```
 ### Deployment
 
 You can deploy this project using:
