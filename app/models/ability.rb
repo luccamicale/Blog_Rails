@@ -7,6 +7,7 @@ class Ability
     else
       can :destroy, Post, author_id: user.id
       can :destroy, Comment, author_id: user.id
+      can :read, :all
     end
   end
 end
