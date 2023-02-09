@@ -23,9 +23,9 @@ default: &default
 
 development:
   <<: *default
-  database: blogApp
+  database: blog_rails
   username: postgres
-  password: rogstrix
+  password: 1134638066
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -58,9 +58,9 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  database: blogApp
+  database: blog_rails
   username: postgres
-  password: rogstrix
+  password: 1134638066
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -84,4 +84,3 @@ test:
 #
 production:
   <<: *default
-
