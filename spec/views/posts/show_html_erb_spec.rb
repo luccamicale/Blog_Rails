@@ -7,19 +7,19 @@ RSpec.describe 'Post show page', type: :feature do
                           posts_counter: 2)
       @user2 = User.create(name: 'Marcos', photo: 'https://i.imgur.com/1JZ1Q2r.jpg', bio: 'I am a math teacher',
                            posts_counter: 3)
-      @first_post = Post.create(author: @user, title: 'My first post', text: 'This is my first post',
+      @first_post = Post.create(author_id: @user.id, title: 'My first post', text: 'This is my first post',
                                 comments_counter: 0, likes_counter: 0)
-      Comment.create(post: @first_post, author: @user2, text: 'This the first post comment')
+      Comment.create(post_id: @first_post.id, author_id: @user2.id, text: 'This the first post comment')
 
-      visit user_post_path(@user, @first_post)
+      visit post_show_path(@user, @first_post)
     end
 
     it "should show a post's title" do
-      expect(page.body).to have_content('This is my first post')
+      expect(page.body).to have_content(@first_post.title)
     end
 
     it 'should show who wrote the post' do
-      expect(page.body).to have_content(@first_post.author.name)
+      expect(page).to have_content(@first_post.user.name)
     end
 
     it 'should show how many comments it has' do
@@ -35,7 +35,7 @@ RSpec.describe 'Post show page', type: :feature do
     end
 
     it 'should show the username of each commentor' do
-      expect(page.body).to have_content(@user2.name)
+      expect(page).to have_content(@user2.name)
     end
 
     it 'should show the comment body' do

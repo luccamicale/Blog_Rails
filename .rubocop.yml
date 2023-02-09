@@ -7,12 +7,11 @@ AllCops:
     - "Guardfile"
     - "Rakefile"
     - "node_modules/**/*"
-    - "posts_index_spec.rb"
 
   DisplayCopNames: true
 
 Layout/LineLength:
-  Max: 210
+  Max: 120
 Metrics/MethodLength:
   Include:
     - "app/controllers/*"
