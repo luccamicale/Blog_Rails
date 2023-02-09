@@ -18,10 +18,16 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to user_path(current_user.id)
     elsif @like.save
-      redirect_to user_path(current_user), notice: 'like was successfully created.'
+      redirect_to user_path(current_user.id), notice: 'like was successfully created.'
     else
       render :new
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to post_path_path(current_user.id)
   end
 
   private

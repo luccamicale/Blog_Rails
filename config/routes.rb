@@ -8,6 +8,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :posts, only: %i[new create]
-  resources :comments, only: %i[new create]
+  resources :posts, only: %i[new create destroy]
+  resources :comments, only: %i[new create destroy]
 end
