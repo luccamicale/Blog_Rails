@@ -9,6 +9,8 @@
       <p><%=@post.text%></p>
     </div>
   </div>
+  
+  <%= button_to 'Delete Post', post_path(@post.id), method: :delete, data: {turbo_method: :delete} %>
   <div class='container-recent-coment-show-posts'>
       <%@post.comments.each do |comment|%>
       <p><%=comment.author.name%>: <%=comment.text%></p>
