@@ -3,15 +3,15 @@ require 'rails_helper'
 RSpec.describe 'Post index page', type: :feature do
   describe 'Post index page process' do
     before(:each) do
-      @user = User.create(name: 'lola', photo: 'https://i.imgur.com/1JZ1Q2r.jpg', bio: 'I am a biology teacher',
-                          posts_counter: 1)
-      @user2 = User.create(name: 'lucas', photo: 'https://i.imgur.com/1JZ1Q2r.jpg', bio: 'I am a math teacher',
-                           posts_counter: 0)
-      @first_post = Post.create(author: @user, title: 'My post', text: 'This is my first post',
+      @user = User.create(name: 'Diego', photo: 'https://i.imgur.com/1JZ1Q2r.jpg', bio: 'I am a biology teacher',
+                          posts_counter: 2)
+      @user2 = User.create(name: 'Marcos', photo: 'https://i.imgur.com/1JZ1Q2r.jpg', bio: 'I am a math teacher',
+                           posts_counter: 3)
+      @first_post = Post.create(author_id: @user.id, title: 'My post', text: 'This is my first post',
                                 comments_counter: 0, likes_counter: 0)
-      Comment.create(post: @first_post, author: @user2, text: 'This the first post comment')
+      Comment.create(post_id: @first_post.id, author_id: @user2.id, text: 'This the first post comment')
 
-      visit user_posts_path(@user)
+      visit post_path_path(@user)
     end
 
     it 'should show the user profile picture' do
@@ -27,7 +27,7 @@ RSpec.describe 'Post index page', type: :feature do
     end
 
     it "should show a post's title" do
-      expect(page.body).to have_content('This is my first post')
+      expect(page).to have_content('My post')
     end
 
     it "should some of the post's body" do
@@ -48,6 +48,11 @@ RSpec.describe 'Post index page', type: :feature do
 
     it 'should not show a pagination button' do
       expect(page.body).not_to have_content('Pagination')
+    end
+
+    it "When I click on a post, it should redirects to that post's show page" do
+      click_link(@first_post.title)
+      expect(page).to have_current_path(post_show_path(@user, @first_post))
     end
   end
 end

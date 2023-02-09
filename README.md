@@ -150,7 +150,13 @@ You can deploy this project using:
 
 - GitHub: [@Oklukeok](https://github.com/Oklukeok)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/lucas-bermudez)
+- Twitter: [@ok_Lukee](https://twitter.com/ok_Lukee)
 
+👤 **Odette Gleen**
+
+- GitHub: [@Gleennkar](https://github.com/Gleennkar)
+- Twitter: [@gleeny24](https://twitter.com/twitterhandle)
+- LinkedIn: [@gleeny](https://www.linkedin.com/in/gleeny-nkar-aa3917182)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

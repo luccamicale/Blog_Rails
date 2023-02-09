@@ -1,25 +1,14 @@
-<h1>Welcome to my Blog App </h1>
-<h2> List of name</h2>
-<section class='section-main'>
+<%= render "shared/header" %>
+<div class="users-container">
   <% @users.each do |user| %>
-    <div class='general-container'>
-        <div class='container-users-photo'>
-          <img src="<%= user.photo%>"/>
+    <%= link_to user_path(user), :class => 'user-button' do %>
+      <div class="user-card">
+         <img src="<%= user.photo %>" class="user-image" alt="user-image">
+        <div class="user-data">
+          <h1><%= user.name %></h1>
+          <span>Number of posts: <%= user.posts_counter %></span>
         </div>
-        <div class='container-users'>
-          <h2 class='user-name'> <%= link_to user_path(user) do%> <%= user.name %><%end%></h2>
-          <span class='number-post'>Number of posts: <%=user.posts.count%></span>
-        </div>
-    </div>
+      </div>
+    <% end %>
   <% end %>
-  <div>
-    <%=link_to user_session_path do%>
-    <button class='login'>Login</button>
-    <% end %>
-  </div>
-  <div>
-    <%=link_to new_user_registration_path do%>
-    <button class='sign-up'>Sign Up</button>
-    <% end %>
-  </div>
-</section>
+</div>

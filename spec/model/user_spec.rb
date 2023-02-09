@@ -9,6 +9,11 @@ RSpec.describe User, type: :model do
     expect(subject).to_not be_valid
   end
 
+  it 'post should be greater than zero' do
+    subject.posts_counter = -1
+    expect(subject).to_not be_valid
+  end
+
   it 'post counter method should be 3' do
     expect(subject.latest_posts).to eq(subject.posts)
   end
