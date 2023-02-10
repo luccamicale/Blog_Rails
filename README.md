@@ -27,7 +27,7 @@ After you're finished please remove all the comments and instructions!
 
 <div align="center">
 
-  <h3><b>BLOG APP MADE WITH RAILS</b></h3>
+  <h3><b>BLOG APP MADE WITH RAILS!</b></h3>
 
 </div>
 
@@ -58,13 +58,13 @@ After you're finished please remove all the comments and instructions!
 
 # 📖 [Blog App] <a name="about-project"></a>
 
-**[Blog App]** is a Blog App made with Ruby on Rails
+**[Blog App]** is a Blog App made with Ruby on Rails.
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> Ruby on Rails
+> Ruby on Rails.
 
 
 ### Key Features <a name="key-features"></a>
@@ -100,6 +100,7 @@ In order to run this project you need:
 - Install Ruby
 - Install PostgreSQL
 - Instal Rails gem
+- install devise
 
 ### Setup
 
