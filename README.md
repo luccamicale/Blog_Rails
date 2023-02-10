@@ -100,6 +100,7 @@ In order to run this project you need:
 - Install Ruby
 - Install PostgreSQL
 - Instal Rails gem
+- install devise
 
 ### Setup
 
